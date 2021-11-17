@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <EditText
+        android:id="@+id/txt_input_property_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/property_type"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/enter_details"
+        app:layout_constraintStart_toStartOf="@+id/enter_details"
+        app:layout_constraintTop_toBottomOf="@+id/enter_details"
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/txt_input_bedrooms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/bedrooms"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_input_property_type"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_input_property_type"
+        app:layout_constraintTop_toBottomOf="@+id/txt_input_property_type"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txt_input_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/date"
+        android:inputType="datetime"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_input_bedrooms"
+        app:layout_constraintStart_toStartOf="@+id/txt_input_bedrooms"
+        app:layout_constraintTop_toBottomOf="@+id/txt_input_bedrooms"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txt_input_monthly_rent_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/monthly_rent_price"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_input_date"
+        app:layout_constraintStart_toStartOf="@+id/txt_input_date"
+        app:layout_constraintTop_toBottomOf="@+id/txt_input_date"
+        tools:ignore="TextContrastCheck,TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txt_input_furniture_types"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/furniture_types"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_input_monthly_rent_price"
+        app:layout_constraintStart_toStartOf="@+id/txt_input_monthly_rent_price"
+        app:layout_constraintTop_toBottomOf="@+id/txt_input_monthly_rent_price"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txt_input_reporter_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/reporter_name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_input_furniture_types"
+        app:layout_constraintStart_toStartOf="@+id/txt_input_furniture_types"
+        app:layout_constraintTop_toBottomOf="@+id/txt_input_furniture_types"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txt_edit_note"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/notes"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/txt_input_reporter_name"
+        app:layout_constraintStart_toStartOf="@+id/txt_input_reporter_name"
+        app:layout_constraintTop_toBottomOf="@+id/txt_input_reporter_name"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/submit"
+        app:iconTint="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="@+id/txt_edit_note"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/txt_edit_note"
+        app:layout_constraintTop_toBottomOf="@+id/txt_edit_note"
+        app:rippleColor="@color/purple_500" />
+
+    <TextView
+        android:id="@+id/enter_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/enter_details"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

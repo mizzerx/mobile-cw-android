@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Mobile CW</string>
+    <string name="welcome">Welcome to RentalZ</string>
+    <string name="start">Start</string>
+    <string name="property_type">Property type (required)</string>
+    <string name="bedrooms">Bedrooms (required)</string>
+    <string name="date">Date (required)</string>
+    <string name="monthly_rent_price">Monthly rent price (required)</string>
+    <string name="furniture_types">Furniture types</string>
+    <string name="reporter_name">Reporter Name (required)</string>
+    <string name="notes">Notes</string>
+    <string name="submit">Submit</string>
+    <string name="rental_details">Rental Details</string>
+    <string name="back">Go back</string>
+    <string name="enter_details">Enter Details</string>
+</resources>
