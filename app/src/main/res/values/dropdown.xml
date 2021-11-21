@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="furniture_types">
+        <item>Furniture</item>
+        <item>Un-furniture</item>
+        <item>Semi-furniture</item>
+    </string-array>
+</resources>

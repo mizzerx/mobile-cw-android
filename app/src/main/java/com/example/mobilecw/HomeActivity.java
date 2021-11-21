@@ -1,36 +1,80 @@
 package com.example.mobilecw;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class HomeActivity extends Activity {
+import java.util.Calendar;
+
+public class HomeActivity extends AppCompatActivity {
     static final String EMPTY_REGEX = "^$";
 
-    private EditText propertyType, bedrooms, date, rentPrice, furnitureTypes, reporterName, notes;
-    private Button submit;
+    private EditText propertyType, bedrooms, date, rentPrice, reporterName, notes;
+    private Button submit, setDate;
+    private Spinner furniture;
+    private DatePickerDialog datePickerDialog;
+    private String furnitureTypes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        initDatePicker();
 
-        propertyType = findViewById(R.id.txt_input_property_type);
-        bedrooms = findViewById(R.id.txt_input_bedrooms);
-        date = findViewById(R.id.txt_input_date);
-        rentPrice = findViewById(R.id.txt_input_monthly_rent_price);
-        furnitureTypes = findViewById(R.id.txt_input_furniture_types);
-        reporterName = findViewById(R.id.txt_input_reporter_name);
-        notes = findViewById(R.id.txt_edit_note);
+        propertyType = findViewById(R.id.txtProp);
+        bedrooms = findViewById(R.id.txtBed);
+        date = findViewById(R.id.txtDateTime);
+        rentPrice = findViewById(R.id.txtRentPrice);
+        reporterName = findViewById(R.id.txtReporter);
+        notes = findViewById(R.id.txtNotes);
 
-        submit = findViewById(R.id.btn_submit);
+        submit = findViewById(R.id.btnSave);
+        setDate = findViewById(R.id.btnChooseDate);
+
+        furniture = findViewById(R.id.furniture_spinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                HomeActivity.this,
+                R.array.furniture_types,
+                android.R.layout.simple_spinner_item
+        );
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        furniture.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                furnitureTypes = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        furniture.setAdapter(adapter);
+
+        setDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog.show();
+            }
+        });
 
         submit.setOnClickListener(v -> {
             Boolean valid = true;
@@ -71,7 +115,7 @@ public class HomeActivity extends Activity {
             i.putExtra("bedrooms", bedrooms.getText().toString().trim());
             i.putExtra("date", date.getText().toString().trim());
             i.putExtra("rent price", rentPrice.getText().toString().trim());
-            i.putExtra("furniture types", furnitureTypes.getText().toString().trim());
+            i.putExtra("furniture types", furnitureTypes);
             i.putExtra("reporter name", reporterName.getText().toString().trim());
             i.putExtra("notes", notes.getText().toString().trim());
             startActivityForResult(i, 0);
@@ -94,8 +138,38 @@ public class HomeActivity extends Activity {
         bedrooms.setText(bed);
         date.setText(dateTime);
         rentPrice.setText(rentP);
-        furnitureTypes.setText(fType);
+        furnitureTypes = fType;
         reporterName.setText(rName);
         notes.setText(note);
+    }
+
+    private void initDatePicker() {
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                month = month + 1;
+                String tmp = formatDate(year, month, day);
+
+                date.setText(tmp);
+            }
+        };
+
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        datePickerDialog = new DatePickerDialog(
+                this,
+                AlertDialog.THEME_HOLO_LIGHT,
+                dateSetListener,
+                year,
+                month,
+                day
+                );
+    }
+
+    private String formatDate(int year, int month, int day) {
+        return String.format("%s-%s-%s", year, month, day);
     }
 }

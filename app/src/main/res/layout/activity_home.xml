@@ -4,133 +4,252 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context=".HomeActivity">
 
-    <EditText
-        android:id="@+id/txt_input_property_type"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/property_type"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/enter_details"
-        app:layout_constraintStart_toStartOf="@+id/enter_details"
-        app:layout_constraintTop_toBottomOf="@+id/enter_details"
-        tools:ignore="TextContrastCheck,TextContrastCheck" />
-
-    <EditText
-        android:id="@+id/txt_input_bedrooms"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/bedrooms"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_input_property_type"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txt_input_property_type"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_property_type"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/txt_input_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/date"
-        android:inputType="datetime"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_input_bedrooms"
-        app:layout_constraintStart_toStartOf="@+id/txt_input_bedrooms"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_bedrooms"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/txt_input_monthly_rent_price"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/monthly_rent_price"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_input_date"
-        app:layout_constraintStart_toStartOf="@+id/txt_input_date"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_date"
-        tools:ignore="TextContrastCheck,TextContrastCheck"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/txt_input_furniture_types"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/furniture_types"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_input_monthly_rent_price"
-        app:layout_constraintStart_toStartOf="@+id/txt_input_monthly_rent_price"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_monthly_rent_price"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/txt_input_reporter_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/reporter_name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_input_furniture_types"
-        app:layout_constraintStart_toStartOf="@+id/txt_input_furniture_types"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_furniture_types"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/txt_edit_note"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/notes"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/txt_input_reporter_name"
-        app:layout_constraintStart_toStartOf="@+id/txt_input_reporter_name"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_reporter_name"
-        android:importantForAutofill="no" />
-
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="@string/submit"
-        app:iconTint="@color/purple_500"
-        app:layout_constraintEnd_toEndOf="@+id/txt_edit_note"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/txt_edit_note"
-        app:layout_constraintTop_toBottomOf="@+id/txt_edit_note"
-        app:rippleColor="@color/purple_500" />
-
-    <TextView
-        android:id="@+id/enter_details"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/enter_details"
-        android:textSize="34sp"
+        android:background="@drawable/border"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Enter new Property Type here"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Required fields are must to input."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="377dp"
+        android:layout_height="597dp"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelProp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/property_type" />
+
+                <EditText
+                    android:id="@+id/txtProp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:hint="Enter property type"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelBed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/bedrooms" />
+
+                <EditText
+                    android:id="@+id/txtBed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:hint="Enter Bedrooms"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/date" />
+
+                <EditText
+                    android:id="@+id/txtDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:hint="Enter date or choose date"
+                    android:inputType="datetime"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+
+                <Button
+                    android:id="@+id/btnChooseDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Choose date" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelRentPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/monthly_rent_price" />
+
+                <EditText
+                    android:id="@+id/txtRentPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:hint="Enter Price"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelFurniture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/furniture_types" />
+
+                <Spinner
+                    android:id="@+id/furniture_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/border"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/notes" />
+
+                <EditText
+                    android:id="@+id/txtNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/border"
+                    android:hint="Enter Notes"
+                    android:inputType="textMultiLine"
+                    android:maxLines="100"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelReporter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/reporter_name" />
+
+                <EditText
+                    android:id="@+id/txtReporter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:hint="Enter Reporter name"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Save" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
